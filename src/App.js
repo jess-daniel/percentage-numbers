@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useMemo } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Calculator from "./components/Calculator";
+import Stats from "./components/Stats";
+import CalculatePercentage from "./utils/CalculatePercentage";
+import Slider from "./components/Slider";
 
 function App() {
+  const [numArr, setNumArr] = useState([]);
+  const percentageHash = useMemo(() => CalculatePercentage(numArr), [numArr]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Slider numArr={numArr} />
+      <Stats percentageHash={percentageHash} />
+      <Calculator setNumArr={setNumArr} />
     </div>
   );
 }
