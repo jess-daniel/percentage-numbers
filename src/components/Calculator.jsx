@@ -39,7 +39,7 @@ function Calculator({ setNumArr }) {
           value={num}
           onChange={changeHandler}
           error={validate()}
-          helperText="Input a number between 1 and 12."
+          helperText="Input a number between 1 and 18."
         />
       </div>
       <div
