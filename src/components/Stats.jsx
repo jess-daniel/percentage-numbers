@@ -3,7 +3,7 @@ function Stats({ percentageHash }) {
   const [arr, setArr] = useState([]);
 
   useEffect(() => {
-    setArr(Object.entries(percentageHash).sort((a, b) => a[0] - b[0]));
+    setArr(Object.entries(percentageHash).sort((a, b) => b[1] - a[1]));
   }, [percentageHash]);
 
   return (

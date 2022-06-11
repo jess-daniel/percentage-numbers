@@ -22,7 +22,7 @@ function Calculator({ setNumArr }) {
   const validate = (e) => {
     if (isNaN(Number(num))) {
       return true;
-    } else if (Number(num) < 1 || Number(num) > 12) {
+    } else if (Number(num) < 1 || Number(num) > 18) {
       return true;
     } else {
       return false;
